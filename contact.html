@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <!-- Write your comments here 
+    <?php
+      $errors = [];
+      $errorMessage = '';
+      
+      if (!empty($_POST)) {
+        $firstName = $_POST["firstname"];
+        $lastName = $_POST["lastname"];
+        $email = $_POST["email"];
+        $subject = $_POST["subject"];
+        
+        if (empty($firstname)) {
+          $errors[] = 'First Name is empty';
+        }
+
+        if (empty($lastname)) {
+          $errors[] = 'Last Name is empty';
+        }
+   
+   
+        if (empty($email)) {
+          $errors[] = 'Email is empty';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          $errors[] = 'Email is invalid';
+        }
+   
+        if (empty($subject)) {
+          $errors[] = 'Message is empty';
+        }
+
+        if (empty($errors)) {
+          $toEmail = 'emeraldbisma@gmail.com';
+          $emailSubject = 'New email from your contact form';
+          $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=utf-8'];
+          $bodyParagraphs = ["First Name: {$firstName}", "Last Name: {$lastName}", "Email: {$email}", "Message:", $message];
+          $body = join(PHP_EOL, $subject);
+   
+          if (mail($toEmail, $emailSubject, $body, $headers)) {   
+              header('Location: thank-you.html');
+          } else {
+              $errorMessage = 'Oops, something went wrong. Please try again later';
+          }
+        } else {
+          $allErrors = join('<br/>', $errors);
+          $errorMessage = "<p style='color: red;'>{$allErrors}</p>";
+        }
+      }
+    ?> -->
+
+
+    <div class="top-container">
+        <div class="nav-bar">
+            <a class="home-navbar" href="home_page.html">Home</a>
+            <a class="portfolio-navbar" href="portfolio.html">Portfolio</a>
+            <a class="contact-navbar" href="contact.html">Contact</a>
+        </div>
+    </div>
+    <div class="middle-container">
+        <div class="contact-info">
+            <h1 class="name-info">Emerald Bismaputra</h1>
+            <p class="phone-info">+62 87875510124</p>
+            <p class="address-info">Jl. Margasatwa Barat Kav 61 C5, Jagakarsa, Jakarta Selatan, Indonesia</p>
+            <p class="email-info">emeraldbisma@gmail.com</p>
+        </div>
+        <div class="form">
+            <form action="/contact.php" method="post" value="reachOut">
+                <div class="row">
+                  <div class="col-25">
+                    <label for="fname">First Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="lname">Last Name</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="col-75">
+                    <input type="text" id="email" name="email" placeholder="Your email..">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-25">
+                    <label for="subject">Subject</label>
+                  </div>
+                  <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <input type="submit" value="Submit">
+                </div>
+                </form>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
